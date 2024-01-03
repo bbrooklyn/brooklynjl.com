@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="https://kit.fontawesome.com/82c0ffea5a.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="intro">
+                <h1>Hi, I'm Brooklyn</h1>
+                <div class="about">
+                    <p>I'm a Computer Science Student from the UK</p>
+                </div>
+            </div>
+            <div class="socials">
+                <a href=""><i class="fa-brands fa-github"></i></a>
+                <a href=""><i class="fa-brands fa-linkedin"></i></a>
+
+                <a href=""><i class="fa-brands fa-discord"></i></a>
+                <a href=""><i class="fa-solid fa-envelope"></i></a>
+            </div>
+
+        </header>
+        <div class="scroll">
+            <a href="#posts"><i class="fas fa-chevron-down"></i></a>
+        </div>
+
+    </div>
+    <section class="width">
+        <div class="context">
+        </div>
+        <div class="posts_container">
+            <h2>Recent posts</h2>
+            <ul class="posts">
+                {% for post in collections.post %}
+                <li>
+                    <a href="{{post.url}}">
+                        <h2 id="tite">{{post.data.title}}</h2>
+                        <p id="date">{{post.data.date}}</p>
+                        <p id="content">{{post.data.content}}</p>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+
+        </div>
+        <div class="projects_container">
+            <h2>Projects</h2>
+            <ul class="projects">
+                {% for post in collections.project %}
+                <li>
+                    <a href="{{project.url}}">
+                        <h2 id="tite">{{post.data.title}}</h2>
+                        <p id="date">{{post.data.date}}</p>
+                        <p id="content">{{post.data.content}}</p>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
+</body>
+
+</html>
